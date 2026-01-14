@@ -16,7 +16,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            // Sekarang dia pasti kenal HealthCareTheme
             HealthCareTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
