@@ -106,11 +106,11 @@ fun HomeStatus(
     when (homeUiState) {
         is HomeUiState.Loading -> BoxLoading(modifier)
         is HomeUiState.Success ->
-            if (homeUiState.tensi.isEmpty()) { // <--- INI BUTUH STEP 1 TADI
+            if (homeUiState.tensi.isEmpty()) {
                 BoxKosong(modifier)
             } else {
                 TensiLayout(
-                    listTensi = homeUiState.tensi, // <--- INI JUGA
+                    listTensi = homeUiState.tensi,
                     modifier = modifier,
                     onItemClick = onDetailClick
                 )
@@ -198,7 +198,6 @@ fun DetailDialog(
                 Text("Denyut Nadi: ${tensi.nadi} bpm")
                 Spacer(modifier = Modifier.height(10.dp))
 
-                // Amankan konversi data
                 val sis = tensi.sistolik.toString().toIntOrNull() ?: 0
                 val status = if (sis > 140) "Tinggi (Hipertensi)" else if (sis < 90) "Rendah" else "Normal"
                 Text("Status: $status", fontWeight = FontWeight.Bold)
