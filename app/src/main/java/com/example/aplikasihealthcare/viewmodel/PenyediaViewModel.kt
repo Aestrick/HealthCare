@@ -10,17 +10,14 @@ import com.example.aplikasihealthcare.repositori.HealthApplication
 object PenyediaViewModel {
     val Factory = viewModelFactory {
 
-        // HOME (Sekarang sudah BENAR, ngirim Repository ke HomeViewModel)
         initializer {
             HomeViewModel(aplikasiHealth().container.repositoryTensi)
         }
 
-        // ENTRY
         initializer {
             EntryViewModel(aplikasiHealth().container.repositoryTensi)
         }
 
-        // DETAIL
         initializer {
             DetailViewModel(
                 this.createSavedStateHandle(),
@@ -28,7 +25,6 @@ object PenyediaViewModel {
             )
         }
 
-        // EDIT
         initializer {
             EditViewModel(
                 this.createSavedStateHandle(),
