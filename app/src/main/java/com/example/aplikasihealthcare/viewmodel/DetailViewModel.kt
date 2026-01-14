@@ -20,7 +20,6 @@ class DetailViewModel(
 
     val uiState: StateFlow<ItemDetailsUiState> = repositoryTensi.getTensiStream(tensiId)
         .filterNotNull()
-        // Sekarang .toDetailTensi() sudah DIKENALI karena ada di DataUtils.kt
         .map { ItemDetailsUiState(detailTensi = it.toDetailTensi()) }
         .stateIn(
             scope = viewModelScope,
@@ -29,7 +28,6 @@ class DetailViewModel(
         )
 
     suspend fun deleteItem() {
-        // .toTensi() juga sudah dikenali
         repositoryTensi.deleteTensi(uiState.value.detailTensi.toTensi())
     }
 }
