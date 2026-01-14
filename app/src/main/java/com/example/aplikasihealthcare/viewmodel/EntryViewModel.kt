@@ -6,13 +6,11 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.aplikasihealthcare.repositori.RepositoryTensi // Pake Repository ya, jangan DAO langsung biar konsisten
 
-// --- STATE UNTUK UI ---
 data class UIStateTensi(
     val detailTensi: DetailTensi = DetailTensi(),
     val isEntryValid: Boolean = false
 )
 
-// Shared Data Class (Ini dipake bareng-bareng sama DetailViewModel & EditViewModel)
 data class DetailTensi(
     val id: Int = 0,
     val sistolik: String = "",
@@ -21,7 +19,6 @@ data class DetailTensi(
     val tanggal: String = ""
 )
 
-// --- VIEW MODEL ---
 class EntryViewModel(private val repositoryTensi: RepositoryTensi) : ViewModel() {
 
     var uiStateTensi by mutableStateOf(UIStateTensi())
@@ -36,7 +33,6 @@ class EntryViewModel(private val repositoryTensi: RepositoryTensi) : ViewModel()
 
     suspend fun saveTensi() {
         if (validasiInput(uiStateTensi.detailTensi)) {
-            // Panggil .toTensi() dari DataUtils.kt
             repositoryTensi.insertTensi(uiStateTensi.detailTensi.toTensi())
         }
     }
