@@ -27,7 +27,6 @@ class EditViewModel(
             tensiUiState = repositoryTensi.getTensiStream(itemId)
                 .filterNotNull()
                 .first()
-                // Sekarang dia pake fungsi dari DataUtils.kt (Gak bentrok lagi)
                 .toUiStateTensi(true)
         }
     }
@@ -38,11 +37,7 @@ class EditViewModel(
 
     suspend fun updateTensi() {
         if (tensiUiState.isEntryValid) {
-            // Ini juga pake dari DataUtils.kt
             repositoryTensi.updateTensi(tensiUiState.detailTensi.toTensi())
         }
     }
 }
-
-// ⚠️ SAYA SUDAH MENGHAPUS FUNGSI 'fun Tensi.toUiStateTensi' DI BAWAH SINI
-// KARENA SUDAH ADA DI DataUtils.kt. JANGAN DITAMBAH LAGI YA!
