@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Data Firebase</string>
+
+    <string name="entry_siswa">Tambah Siswa</string>
+    <string name="detail_siswa">Detail Siswa</string>
+    <string name="edit_siswa">Edit Siswa</string>
+
+    <string name="nama">Nama Siswa*</string>
+    <string name="alamat">Alamat Siswa*</string>
+    <string name="telpon">Telpon Siswa*</string>
+
+    <string name="nama1">Nama Siswa :</string>
+    <string name="alamat1">Alamat Siswa :</string>
+    <string name="telpon1">Telpon Siswa :</string>
+
+    <string name="required_field">Wajib diisi</string>
+    <string name="deskripsi_no_item">Tidak ada data Siswa. Tap + untuk menambah data</string>
+    <string name="gagal">Gagal Memuat Data</string>
+    <string name="loading">Loading...</string>
+    <string name="retry">Coba Lagi</string>
+
+    <string name="btn_submit">Submit</string>
+    <string name="delete">Hapus</string>
+    <string name="update">Edit</string>
+    <string name="back">Kembali</string>
+
+    <string name="attention">Perhatian !</string>
+    <string name="tanya">Apakah yakin akan menghapus data ini?</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+</resources>
