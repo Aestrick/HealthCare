@@ -2,7 +2,7 @@ package com.example.aplikasihealthcare.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-//yes
+
 
 @Entity(tableName = "tensi")
 data class Tensi(
